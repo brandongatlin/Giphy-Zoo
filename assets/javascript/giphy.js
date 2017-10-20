@@ -1,1 +1,1 @@
-var funnyGifs = [];
+var animalsArrary = ["fox", "dog", "cat", "pinguin", "elephant", "squirrel", "frog", "bird", "lion", "parrot"];
