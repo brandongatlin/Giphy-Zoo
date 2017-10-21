@@ -9,7 +9,7 @@ function renderButtons() {
 
     // Deleting the animal prior to adding new animal
     // (this is necessary otherwise we will have repeat buttons)
-   $("#animalDump").empty();
+    $("#animalDump").empty();
 
     // Loop thru array to build buttons
 
@@ -71,15 +71,26 @@ $.ajax({
 
         // Log the resulting object
         console.log(response);
-        console.log(response.data[0].rating) // returning rating of gif
+        console.log(response.data[0].bitly_gif_url) // returning url of gif
 
         // Transfer content to HTML
-        $("#gifDump").html("<p>" + response.data[0].rating + "</p>");
+
+        $(".animal").on("click", function() {
+            $.ajax();
+
+            $("#gifDump").append("<p>" + response.data[0].bitly_gif_url + "</p>");
+
+
+
+      });
 
     });
 
 
 
-$(".animal").on("click", function() {
-    $.ajax();
-});
+
+
+// test
+
+
+  
