@@ -1,4 +1,4 @@
-var animalsArray = ["fox", "dog", "cat", "penguin", "elephant", "squirrel", "frog", "bird", "lion", "parrot"];
+var animalsArray = ["dog", "cat", "penguin", "elephant", "squirrel", "frog", "bird", "lion", "parrot"];
 
 console.log(animalsArray)
 
@@ -33,10 +33,15 @@ function renderButtons() {
 $("#submit").on("click", function(event) {
     // Preventing the buttons default behavior when clicked (which is submitting a form)
     event.preventDefault();
+
+
     // This line grabs the input from the textbox
     var animal = $("#addAnimal").val().trim();
+    if ("#addAnimal" === "") {
+    	alert("please add an animal!")
+    }
 
-    // Adding the movie from the textbox to our array
+    // Adding the animal from the textbox to our array
     animalsArray.push(animal);
 
     // Calling renderButtons which handles the processing of our movie array
