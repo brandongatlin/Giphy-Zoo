@@ -2,11 +2,7 @@ var animalsArray = ["fox", "dog", "cat", "penguin", "elephant", "squirrel", "fro
 
 console.log(animalsArray)
 
-function alertAnimalName() {
-        var animalName = $(this).attr("data-name");
 
-        alert(animalName);
-      }
 
 // Function for displaying animal data
 function renderButtons() {
@@ -52,7 +48,6 @@ function renderButtons() {
       // We're adding a click event listener to all elements with the class "movie"
       // We're adding the event listener to the document because it will work for dynamically generated elements
       // $(".movies").on("click") will only add listeners to elements that are on the page at that time
-      $(document).on("click", ".animal", alertAnimalName);
 
       // Calling the renderButtons function to display the intial buttons
       renderButtons();
