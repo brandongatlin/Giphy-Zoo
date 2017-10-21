@@ -71,18 +71,18 @@ $.ajax({
 
         // Log the resulting object
         console.log(response);
-        console.log(response.data[0].bitly_gif_url) // returning url of gif
+        console.log(response.data[0].rating) // returning rating of gif
 
         // Transfer content to HTML
 
         $(".animal").on("click", function() {
             $.ajax();
+            // return rating of gif and write to html in 'p' tag in gifDump
+            $("#gifDump").html("<p>" + response.data[0].rating + "</p>");
 
-            $("#gifDump").append("<p>" + response.data[0].bitly_gif_url + "</p>");
 
 
-
-      });
+        });
 
     });
 
@@ -91,6 +91,3 @@ $.ajax({
 
 
 // test
-
-
-  
