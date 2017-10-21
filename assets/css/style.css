@@ -3,6 +3,12 @@
 	color: white;
 }
 
+.animal {
+	color: white;
+	background-color: #dd7a1e;
+	border-radius: 5px;
+}
+
 #row-3 {
 	height: 600px;
 }
