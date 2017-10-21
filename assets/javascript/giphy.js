@@ -9,7 +9,7 @@ function renderButtons() {
 
     // Deleting the animal prior to adding new animal
     // (this is necessary otherwise we will have repeat buttons)
-    $("#animalDump").empty();
+   $("#animalDump").empty();
 
     // Loop thru array to build buttons
 
@@ -53,9 +53,8 @@ $("#submit").on("click", function(event) {
 // Calling the renderButtons function to display the intial buttons
 renderButtons();
 
-//var APIKey = "dc6zaTOxFJmzC";
 var APIKey = "garZqKF43Z1oYqEuQRR2Nr300rHn2n9r"
-//var queryURL = "https://api.giphy.com/v1/gifs/search?" + "APIKey" + "q=" + "(animal)" + "imit=25&offset=0&rating=G&lang=en"
+//var queryURL = "https://api.giphy.com/v1/gifs/search?" + "APIKey" + "q=" + "(animal)" + "limit=25&offset=0&rating=G&lang=en"
 var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=fox&limit=25&offset=0&rating=G&lang=en"
 
 
