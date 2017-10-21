@@ -1,5 +1,10 @@
 .row {
 	padding: 20px;
+	color: white;
+}
+
+#row-3 {
+	height: 600px;
 }
 
 #submit {
@@ -8,4 +13,8 @@
 
 #addAnimal {
 	width: 300px;
+}
+
+#container {
+	background-image: url("../images/zoo.png");
 }
