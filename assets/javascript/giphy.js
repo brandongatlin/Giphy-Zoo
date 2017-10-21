@@ -60,31 +60,43 @@ var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR
 
 
 // Here we run our AJAX call to the giffy API
-$.ajax({
-        url: queryURL,
-        method: "GET"
-    })
-    // We store all of the retrieved data inside of an object called "response"
-    .done(function(response) {
-
-        console.log(queryURL);
-
-        // Log the resulting object
-        console.log(response);
-        console.log(response.data[0].rating) // returning rating of gif
-
-        // Transfer content to HTML
-
-        $(".animal").on("click", function() {
-            $.ajax();
-            // return rating of gif and write to html in 'p' tag in gifDump
-            $("#gifDump").html("<p>" + response.data[0].rating + "</p>");
+function ajaxFunction() {
+    $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+        // We store all of the retrieved data inside of an object called "response"
+        .done(function(response) {
 
 
+            console.log(queryURL);
+
+            // Log the resulting object
+            console.log(response);
+            console.log(response.data[0].rating) // returning rating of gif
+
+            // Transfer content to HTML
+            //$("#gifDump").html("<p>" + response.data[0].rating + "</p>");
+            $("#gifDump").html("<img src=" + response.data[0].url + "></img>");
+
+
+
+
+
+
+            //var test = ("<script src=" + response.data[0].embed_url + "></script>");
+            //console.log(test)
+            //});
 
         });
+}
+$(".animal").on("click", function() {
+    ajaxFunction();
+})
+// return rating of gif and write to html in 'p' tag in gifDump
 
-    });
+
+
 
 
 
