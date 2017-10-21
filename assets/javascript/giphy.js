@@ -25,7 +25,7 @@ function renderButtons() {
         a.text(animalsArray[i]);
         // Adding the button to the HTML
         $("#animalDump").append(a);
-
+        // $("#addAnimal).empty();
     }
 }
 
@@ -54,10 +54,7 @@ $("#submit").on("click", function(event) {
 renderButtons();
 
 //var APIKey = "dc6zaTOxFJmzC";
-
-// Here we are building the URL we need to query the database
-// I've used a public api key because mine wasn't working
-//var queryURL = "https://api.giphy.com/v1/gifs/search?" + "APIKey" + "q=" + "limit=25&offset=0&rating=G&lang=en"
+var APIKey = "garZqKF43Z1oYqEuQRR2Nr300rHn2n9r"
 //var queryURL = "https://api.giphy.com/v1/gifs/search?" + "APIKey" + "q=" + "(animal)" + "imit=25&offset=0&rating=G&lang=en"
 var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=fox&limit=25&offset=0&rating=G&lang=en"
 
@@ -84,6 +81,6 @@ $.ajax({
 
 
 
-    $(".animal").on("click", function(){
+$(".animal").on("click", function() {
     alert("The button was clicked.");
 });

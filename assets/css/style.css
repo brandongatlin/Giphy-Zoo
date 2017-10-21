@@ -10,6 +10,11 @@
 	width: 75px;
 }
 
+.animal:hover {
+	background-color: orange;
+	transition: .5s;
+}
+
 #row-3 {
 	height: 600px;
 }
@@ -18,8 +23,17 @@
 	width: 150px;
 }
 
+#submit:hover {
+	background-color: orange;
+	transition: .5s;
+}
+
 #addAnimal {
 	width: 300px;
+}
+
+#addAnimal:focus {
+	background-color: #dd7a1e;
 }
 
 #container {
