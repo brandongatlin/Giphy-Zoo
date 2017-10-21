@@ -38,7 +38,7 @@ $("#submit").on("click", function(event) {
     // This line grabs the input from the textbox
     var animal = $("#addAnimal").val().trim();
     if ("#addAnimal" === "") {
-    	alert("please add an animal!")
+        alert("please add an animal!")
     }
 
     // Adding the animal from the textbox to our array
@@ -52,3 +52,38 @@ $("#submit").on("click", function(event) {
 
 // Calling the renderButtons function to display the intial buttons
 renderButtons();
+
+//var APIKey = "dc6zaTOxFJmzC";
+
+// Here we are building the URL we need to query the database
+// I've used a public api key because mine wasn't working
+//var queryURL = "https://api.giphy.com/v1/gifs/search?" + "APIKey" + "q=" + "limit=25&offset=0&rating=G&lang=en"
+//var queryURL = "https://api.giphy.com/v1/gifs/search?" + "APIKey" + "q=" + "(animal)" + "imit=25&offset=0&rating=G&lang=en"
+var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=fox&limit=25&offset=0&rating=G&lang=en"
+
+
+
+// Here we run our AJAX call to the giffy API
+$.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+    // We store all of the retrieved data inside of an object called "response"
+    .done(function(response) {
+
+        console.log(queryURL);
+
+        // Log the resulting object
+        console.log(response);
+        console.log(response.data[0].rating) // returning rating of gif
+
+        // Transfer content to HTML
+        $("#gifDump").html("<p>" + response.data[0].rating + "</p>");
+
+    });
+
+
+
+    $(".animal").on("click", function(){
+    alert("The button was clicked.");
+});
