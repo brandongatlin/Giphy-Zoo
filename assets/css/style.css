@@ -7,10 +7,19 @@
 	color: white;
 }
 
+#row-1 {
+	height: 100px;
+}
+
 .flags {
 	height: 40px;
 	float: left;
 	padding: 5px;
+}
+
+.flags:hover {
+	height: 50px;
+	transition: .5s;
 }
 
 .animal {
