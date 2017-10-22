@@ -1,4 +1,4 @@
-var animalsArray = ["perro", "gato", "pingüino", "elefante", "ardilla", "rana", "pájaro", "león", "loro"];
+var animalsArray = ["perro", "gato", "ping\xFCino", "elefante", "ardilla", "rana", "p\xE1jaro", "le\xF3n", "loro"];
 
 console.log(animalsArray)
 
