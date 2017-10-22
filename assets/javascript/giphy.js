@@ -26,6 +26,8 @@ function renderButtons() {
         // Adding the button to the HTML
         $("#animalDump").append(a);
         // $("#addAnimal).empty();
+
+
     }
 }
 
@@ -33,7 +35,6 @@ function renderButtons() {
 $("#submit").on("click", function(event) {
     // Preventing the buttons default behavior when clicked (which is submitting a form)
     event.preventDefault();
-
 
     // This line grabs the input from the textbox
     var animal = $("#addAnimal").val().trim();
@@ -53,9 +54,9 @@ $("#submit").on("click", function(event) {
 // Calling the renderButtons function to display the intial buttons
 renderButtons();
 
-var APIKey = "garZqKF43Z1oYqEuQRR2Nr300rHn2n9r"
-//var queryURL = "https://api.giphy.com/v1/gifs/search?" + "APIKey" + "q=" + "(animal)" + "limit=25&offset=0&rating=G&lang=en"
-var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=dog&limit=25&offset=0&rating=G&lang=en"
+//var APIKey = "garZqKF43Z1oYqEuQRR2Nr300rHn2n9r"
+var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=" + animalsArray + "&limit=25&offset=0&rating=G&lang=en"
+//var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=dog&limit=25&offset=0&rating=G&lang=en"
 
 
 
@@ -77,29 +78,13 @@ function ajaxFunction() {
 
             // Transfer content to HTML
             //$("#gifDump").html("<p>" + response.data[0].rating + "</p>");
-            $("#gifDump").html("<img src=" + response.data[0].url + "></img>");
+            $("#gifDump").html("<img src=" + response.data[0].images.fixed_height.url + "></img>");
 
-
-
-
-
-
-            //var test = ("<script src=" + response.data[0].embed_url + "></script>");
-            //console.log(test)
-            //});
 
         });
 }
 $(".animal").on("click", function() {
     ajaxFunction();
 })
-// return rating of gif and write to html in 'p' tag in gifDump
 
-
-
-
-
-
-
-
-// test
+// testing
