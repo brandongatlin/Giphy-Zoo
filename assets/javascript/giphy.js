@@ -25,7 +25,6 @@ function renderButtons() {
         a.text(animalsArray[i]);
         // Adding the button to the HTML
         $("#animalDump").append(a);
-        // $("#addAnimal).empty();
 
 
     }
@@ -38,12 +37,14 @@ $("#submit").on("click", function(event) {
 
     // This line grabs the input from the textbox
     var animal = $("#addAnimal").val().trim();
-    if ("#addAnimal" === "") {
+    if ((animal) === "") {
         alert("please add an animal!")
-    }
+    }else {animalsArray.push(animal);}
+    
+
 
     // Adding the animal from the textbox to our array
-    animalsArray.push(animal);
+    
 
     // Calling renderButtons which handles the processing of our movie array
     renderButtons();
@@ -56,7 +57,7 @@ renderButtons();
 
 //var APIKey = "garZqKF43Z1oYqEuQRR2Nr300rHn2n9r"
 var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=" + animalsArray + "&limit=25&offset=0&rating=G&lang=en"
-//var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=dog&limit=25&offset=0&rating=G&lang=en"
+//sample queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=dog&limit=25&offset=0&rating=G&lang=en"
 
 
 
