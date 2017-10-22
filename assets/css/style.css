@@ -48,6 +48,6 @@
 	background-color: #dd7a1e;
 }
 
-#container {
+.container {
 	background-image: url("../images/zoo.png");
 }
