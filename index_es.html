@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es-419">
+
+<head>
+    <title>el giphy</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- open main content container -->
+    <div class="container" id="container">
+        <!-- open row 1 -->
+        <div class="row" id="row-1">
+            <div class="col-md-11">
+                <div id="animalDump">
+                    <!-- animals buttons dumped here -->
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div id="flagBox">
+                    <p>flag here</p>
+                </div>
+            </div>
+            <!-- close row 1 -->
+        </div>
+        <!-- open row 2 -->
+        <div class="row" id="row-2">
+            <div class="form-group">
+                <label for="addAnimal">¡Añade un animal aquí!</label>
+                <input type="text" class="form-control" id="addAnimal">
+                <!-- add animal button -->
+                <input type="submit" class="form-control" value="Enviar" id="submit">
+                <!-- submit button -->
+            </div>
+            <!-- close row 2 -->
+        </div>
+        <!-- open row 3 -->
+        <div class="row" id="row-3">
+            <div id="gifDump">
+                <!-- dump gifs here -->
+            </div>
+        </div>
+        <!-- close row 3 -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/giphy.js"></script>
+</body>
+
+</html>

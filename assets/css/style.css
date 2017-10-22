@@ -3,6 +3,10 @@
 	color: white;
 }
 
+#flagBox {
+	background-color: red;
+}
+
 .animal {
 	color: white;
 	background-color: #dd7a1e;
