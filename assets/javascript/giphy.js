@@ -39,12 +39,12 @@ $("#submit").on("click", function(event) {
     var animal = $("#addAnimal").val().trim();
     if ((animal) === "") {
         alert("please add an animal!")
-    }else {animalsArray.push(animal);}
-    
+    } else { animalsArray.push(animal); }
+
 
 
     // Adding the animal from the textbox to our array
-    
+
 
     // Calling renderButtons which handles the processing of our movie array
     renderButtons();
