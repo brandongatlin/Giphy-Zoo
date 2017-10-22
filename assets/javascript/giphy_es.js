@@ -38,7 +38,7 @@ $("#submit").on("click", function(event) {
     // This line grabs the input from the textbox
     var animal = $("#addAnimal").val().trim();
     if ((animal) === "") {
-        alert("¡Añade un animal, por favor!")
+        alert("\u00A1A\xF1ade un animal, por favor!")
     } else { animalsArray.push(animal); }
 
 
