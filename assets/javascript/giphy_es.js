@@ -57,7 +57,7 @@ renderButtons();
 
 //var APIKey = "garZqKF43Z1oYqEuQRR2Nr300rHn2n9r"
 var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=" + animalsArray + "&limit=25&offset=0&rating=G&lang=es"
-//sample queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=dog&limit=25&offset=0&rating=G&lang=en"
+//sample queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=dog&limit=25&offset=0&rating=G&lang=es"
 
 
 
