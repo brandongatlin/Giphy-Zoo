@@ -79,7 +79,7 @@ function ajaxFunction(searchTerm) {
             // Log the resulting object
             //console.log(response);
             
-            for(var i = 0;  i < response.data.length    ;i++){
+            for(var i = 0;  i < response.data.length;i++){
 
                       
                 var newDiv = $("<div class='col-xs-3'>");

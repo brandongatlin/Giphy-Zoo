@@ -2,13 +2,22 @@
     font-family: 'Indie Flower', cursive;
 }
 
+h1 {
+	text-align: center;
+}
+
 .gif {
 	border: 1px solid black;
+    border-radius: 5%;
 }
 
 .row {
     padding: 20px;
     color: white;
+}
+
+.col {
+	padding: 10px;
 }
 
 #row-1 {
