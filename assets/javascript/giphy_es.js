@@ -1,4 +1,4 @@
-var animalsArray = ["perro", "gato", "ping\xFCino", "elefante", "ardilla", "rana", "p\xE1jaro", "le\xF3n", "loro"];
+var animalsArray = ["perro", "gato", "pinguino", "elefante", "ardilla", "rana", "pajaro", "leon", "perico"];
 
 console.log(animalsArray)
 
@@ -62,7 +62,7 @@ renderButtons();
 // Here we run our AJAX call to the giffy API
 function ajaxFunction(searchTerm) {
     
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=" + searchTerm + "&limit=10&offset=0&rating=G&lang=en"
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=" + searchTerm + "&limit=10&offset=0&rating=G&lang=es"
 
     $.ajax({
             url: queryURL,

@@ -1,62 +1,63 @@
 .text {
-	font-family: 'Indie Flower', cursive;
+    font-family: 'Indie Flower', cursive;
 }
 
 .row {
-	padding: 20px;
-	color: white;
+    padding: 20px;
+    color: white;
 }
 
 #row-1 {
-	height: 100px;
+    height: 100px;
 }
 
 .flags {
-	height: 40px;
-	float: left;
-	padding: 5px;
+    height: 40px;
+    float: left;
+    padding: 5px;
 }
 
 .flags:hover {
-	height: 50px;
-	transition: .5s;
+    height: 50px;
+    transition: .5s;
 }
 
 .animal {
-	color: white;
-	background-color: #dd7a1e;
-	border-radius: 5px;
-	width: 75px;
-	font-family: 'Indie Flower', cursive;
+    color: white;
+    background-color: #dd7a1e;
+    border-radius: 5px;
+    width: 75px;
+    font-family: 'Indie Flower', cursive;
 }
 
 .animal:hover {
-	background-color: orange;
-	transition: .5s;
+    background-color: orange;
+    transition: .5s;
 }
 
 #row-3 {
-	height: 600px;
+    height: 600px;
 }
 
 #submit {
-	width: 150px;
-	color: black;
+    width: 150px;
+    color: black;
+    border-radius: 5px;
 }
 
 #submit:hover {
-	background-color: orange;
-	transition: .5s;
+    background-color: orange;
+    transition: .5s;
 }
 
 #addAnimal {
-	width: 300px;
+    width: 300px;
 }
 
 #addAnimal:focus {
-	background-color: #dd7a1e;
+    background-color: #dd7a1e;
 }
 
 .container {
-	background-image: url("../images/zoo.png");
+    background-image: url("../images/zoo.png");
 }
