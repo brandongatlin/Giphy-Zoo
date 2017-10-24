@@ -2,8 +2,6 @@ var animalsArray = ["perro", "gato", "ping\xFCino", "elefante", "ardilla", "rana
 
 console.log(animalsArray)
 
-
-
 // Function for displaying animal data
 function renderButtons() {
 
@@ -38,7 +36,7 @@ $("#submit").on("click", function(event) {
     // This line grabs the input from the textbox
     var animal = $("#addAnimal").val().trim();
     if ((animal) === "") {
-        alert("\u00A1A\xF1ade un animal, por favor!")
+        alert("a\xF1ade un animal, por favor!")
     } else { animalsArray.push(animal); }
 
 
@@ -55,14 +53,17 @@ $("#submit").on("click", function(event) {
 // Calling the renderButtons function to display the intial buttons
 renderButtons();
 
-//var APIKey = "garZqKF43Z1oYqEuQRR2Nr300rHn2n9r"
-var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=" + animalsArray + "&limit=25&offset=0&rating=G&lang=es"
-//sample queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=dog&limit=25&offset=0&rating=G&lang=es"
+//var APIKey = "garZqKF43Z1oYqEuQRR2Nr300rHn2n9r"                                           // this should be 'animal'
+
+//sample queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=dog&limit=25&offset=0&rating=G&lang=en"
 
 
 
 // Here we run our AJAX call to the giffy API
-function ajaxFunction() {
+function ajaxFunction(searchTerm) {
+    
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=garZqKF43Z1oYqEuQRR2Nr300rHn2n9r&q=" + searchTerm + "&limit=10&offset=0&rating=G&lang=en"
+
     $.ajax({
             url: queryURL,
             method: "GET"
@@ -74,18 +75,64 @@ function ajaxFunction() {
             console.log(queryURL);
 
             // Log the resulting object
-            console.log(response);
-            console.log(response.data[0].rating) // returning rating of gif
+            //console.log(response);
+            
+            for(var i = 0;  i < response.data.length    ;i++){
 
-            // Transfer content to HTML
-            //$("#gifDump").html("<p>" + response.data[0].rating + "</p>");
-            $("#gifDump").html("<img src=" + response.data[0].images.fixed_height.url + "></img>");
+                      
+                var newDiv = $("<div class='col-xs-3'>");
+                
+                var newImg = $("<img>");
+                newImg.addClass("gif");
+                newImg.attr("src", response.data[i].images.fixed_height_small_still.url);
+                newImg.attr("data-still", response.data[i].images.fixed_height_small_still.url);
+                newImg.attr("data-animated", response.data[i].images.fixed_height_small.url);
+                newImg.attr("data-state", "still");
 
+                newDiv.append(newImg);
+                newDiv.append("<p>Clasificaci\xF3n: " + response.data[i].rating + "</p>")
 
+                $("#gifDump").append(newDiv);
+
+                // Transfer content to HTML
+                //$("#gifDump").html("<p>" + response.data[0].rating + "</p>");
+               
+
+            }
         });
 }
-$(".animal").on("click", function() {
-    ajaxFunction();
+
+
+
+$(document).on("click", ".animal",  function() {
+    
+    var searchTerm = $(this).attr("data-name");
+    console.log(searchTerm);
+
+    $("#gifDump").empty();
+
+    ajaxFunction(searchTerm);
+
 })
 
-// testing
+$(document).on("click", ".gif",  function() {
+
+    var state = $(this).attr("data-state");
+    console.log(state);
+
+
+    if(state === "still")
+    {
+        $(this).attr("src", $(this).attr("data-animated") );
+        $(this).attr("data-state", "animated");
+
+    }    
+    else 
+    {
+        $(this).attr("src", $(this).attr("data-still") );
+        $(this).attr("data-state", "still");
+
+    }
+    
+
+})
